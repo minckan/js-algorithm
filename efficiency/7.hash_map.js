@@ -29,7 +29,7 @@
       : "NO"; */
 
     // 2. 강의 전반의 설명을 듣고 내가 작성한 코드
-    for (const key of A) {
+    /*     for (const key of A) {
       if (mapA.has(key)) mapA.set(key, mapA.get(key) + 1);
       else mapA.set(key, 1);
     }
@@ -40,6 +40,17 @@
       } else {
         answer = "NO";
       }
+    } */
+
+    // 3. 강의 코드
+    for (const key of A) {
+      if (mapA.has(key)) mapA.set(key, mapA.get(key) + 1);
+      else mapA.set(key, 1);
+    }
+
+    for (const key of B) {
+      if (!mapA.has(key) && mapA.get(key) === 0) return "NO";
+      mapA.set(key, mapA.get(key) - 1);
     }
     return answer;
   }
